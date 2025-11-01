@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elijah | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Elijah</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Hello, I'm Elijah</h1>
+      <p>UI/UX Designer & Aspiring Frontend Developer</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects-section">
+    <h2>My Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <h3>Landing Page Design</h3>
+        <p>A clean and responsive HTML/CSS landing page for a product.</p>
+        <a href="#">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (optional) -->
+  <footer>
+    <p>© 2025 Elijah | Crafted with ❤️ and creativity</p>
+      <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+    <p>Got a project idea, collaboration, or just want to say hi? Drop me a message ✉️</p>
+
+    <form action="https://formspree.io/f/mkgpppkg" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+</section>
+  </footer>
+  <script>
+const form = document.querySelector(".contact-form");
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
+  const res = await fetch(form.action, {
+    method: "POST",
+    body: data,
+    headers: { Accept: "application/json" },
+  });
+
+  if (res.ok) {
+    alert("Thanks for reaching out! 💌 I’ll get back to you soon.");
+    form.reset();
+  } else {
+    alert("Oops! Something went wrong. Try again later.");
+  }
+});
+</script>
+</body>
+</html>
